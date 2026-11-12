@@ -1,4 +1,16 @@
 import express from 'express';
+import mongoose from 'mongoose';
+import dotenv from 'dotenv';
+
+dotenv.config();
+
+const mongoDBURI = process.env.MONGO_URI;
+
+mongoose.connect(mongoDBURI).then(
+    ()=>{
+        console.log("Connected to MongoDB successfully")
+    }
+)
 
 const app = express();
 
